@@ -17,7 +17,11 @@ class Game():
         print("\n=======================================")
         print(text)
         print("=======================================")
-        user_input = input("Do you still want to play the game? (y/n): ")
+        user_input = input("Do you still want to play the game? (y/n): ").lower()
+        print(user_input)
+        while user_input != 'y' and user_input != 'n':
+            print("Please enter y or n only.")
+            user_input = input("Do you still want to play the game? (y/n): ").lower()
         if user_input == 'y':
             self.life = 5
             self.start_game()
@@ -26,10 +30,10 @@ class Game():
 
     def start_game(self):
         self.set_active_phrase()
-        game_won = False
+        not_finsihed = True
 
         print("Welcome to Phrase Hunter\n")
-        while not game_won:
+        while not_finsihed:
             print(f'\nTotal Lives left: {self.life}')
             game_won = self.current_phrase.display_phrase()
             if not game_won:
@@ -45,3 +49,4 @@ class Game():
                         break
             else:
                 self.game_over("Congratulation, you won the game")
+                not_finsihed = False
