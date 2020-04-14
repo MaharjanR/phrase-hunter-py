@@ -1,7 +1,7 @@
 # Import your Game class
 from phrasehunter import game
 
-phrases = ['My name is', 'python', 'JavaScript']
+phrases = ['Node', 'python', 'JavaScript']
 # Create your Dunder Main statement.
 # Inside Dunder Main:
 ## Create an instance of your Game class
