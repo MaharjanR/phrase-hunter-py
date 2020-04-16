@@ -5,13 +5,14 @@ from phrasehunter.phrase import Phrase
 
 class Game():
     def __init__(self, phrases, life = 5):
-        self.phrases = phrases
+        self.phrases = [Phrase(phrase) for phrase in phrases]
         self.current_phrase = ''
         self.life = life
+        print(self.phrases)
 
     def set_active_phrase(self):
         random_num = random.randint(0, ( len(self.phrases) - 1) )
-        self.current_phrase = Phrase(self.phrases[random_num])
+        self.current_phrase = self.phrases[random_num]
 
     def game_over(self, text):
         print("\n=======================================")
